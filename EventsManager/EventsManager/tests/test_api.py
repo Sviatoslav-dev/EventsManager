@@ -52,7 +52,6 @@ def test_event_register(api_client, event, user):
     assert user in event.attendees.all()
 
 def test_event_invited(api_client, event, user):
-    # event.attendees.add(other_user)
     api_client.force_authenticate(user=user)
     url = '/api/events/'
     response = api_client.get(url)
